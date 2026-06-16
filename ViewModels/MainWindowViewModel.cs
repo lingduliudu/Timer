@@ -82,6 +82,7 @@ namespace Timer2.ViewModels {
         public void OnSubmit() {
             ContentText = string.Empty;
             IsContentMode = false;
+            _countdownTimer?.Stop();
         }
         private void UpdateCountdownText() {
             TimeSpan time = TimeSpan.FromSeconds(_remainingSeconds);
