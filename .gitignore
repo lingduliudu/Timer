@@ -1,0 +1,25 @@
+# 用户特定文件
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# 生成结果目录 (最重要)
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio 缓存目录
+.vs/
+# 打包输出目录
+packages/
+*.nupkg
+publish/
+*.pdb
+*.cache
+*.tmp
+*.log
+_ReSharper*/
+*.DotSettings.user

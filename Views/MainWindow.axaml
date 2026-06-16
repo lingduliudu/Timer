@@ -1,0 +1,29 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Timer2.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="Timer2.Views.MainWindow" x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico" WindowStartupLocation="CenterScreen" SystemDecorations="BorderOnly"
+        Width="290" Title=""  CanResize="False" 
+         PointerPressed="OnGridPointerPressed"
+        Background="rgb(70, 130, 180)" Opacity="0.9">
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid  VerticalAlignment="Center" Height="25" >
+        <StackPanel IsVisible="{Binding IsButtonMode}" Orientation="Horizontal" Height="25" >
+            <Button Background="#c4fcef" CornerRadius="0" Height="25" Width="60" Margin="0,0,10,0" Command="{Binding OnSelectButton}" CommandParameter="15" />
+            <Button Background="#00c9a7" CornerRadius="0" Height="25" Width="60" Margin="0,0,10,0" Command="{Binding OnSelectButton}" CommandParameter="25"/>
+            <Button Background="#4d8076" CornerRadius="0" Height="25" Width="60" Margin="0,0,0,0" Command="{Binding OnSelectButton}" CommandParameter="35"/>
+            <ToggleButton Background="rgb(70, 130, 180)" CornerRadius="0" Height="25" Width="10" Margin="0,0,0,0" IsCheckedChanged="OnTopButton"/>
+            <Button CornerRadius="0" Background="Red" Height="25" Width="10" Margin="0,0,10,0" Click="OnExitButton" />
+        </StackPanel>
+        
+        <StackPanel IsVisible="{Binding IsContentMode}" Orientation="Horizontal" Height="25">
+            <TextBlock  Foreground="#ffc75f" FontSize="23" Padding="73,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ContentText, Mode=TwoWay}" TextAlignment="Center" Height="25" Width="170" />
+            <Button CornerRadius="0" Command="{Binding OnSubmit}" Height="10" Width="10" Margin="20,0,0,0" Background="#ff9671"/>
+        </StackPanel>
+    </Grid>
+</Window>
